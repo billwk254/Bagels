@@ -5,13 +5,13 @@ MAX_GUESSES = 10
 
 def main():
     """The main game loop for the bagels game"""
-    print("{0:>40}".format("Bagels, A deductive logic game"))
-    print(f"""I am thinking of a {NUM_DIGITS}-digit number with no repeated digits
-    try to guess what it is. Here are some clues:
-When I say:             That means
-Pico                      One digit is correct but in the wrong position
-Fermi                     One digit is correct and in the right position
-Bagels                    No digit is correct""")
+    print("{0:>40}".format("---------***--Bagels, A deductive logic game--***-----------\n"))
+    print(f"""I am thinking of a {NUM_DIGITS}-digit number with no repeated digits 
+        try to guess what it is. Here are some clues:\n
+When I say:             That means\n
+Pico ------------------ One digit is correct but in the wrong position
+Fermi------------------ One digit is correct and in the right position
+Bagels----------------- No digit is correct""")
 
     while True:
         secretnum = getsecretnum()
