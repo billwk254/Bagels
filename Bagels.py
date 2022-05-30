@@ -3,6 +3,7 @@ import random
 NUM_DIGITS = 3
 MAX_GUESSES = 10
 
+
 def main():
     """The main game loop for the bagels game"""
     print("{0:>40}".format("---------***--Bagels, A deductive logic game--***-----------\n"))
@@ -23,9 +24,9 @@ Bagels----------------- No digit is correct""")
             guess = ""
             while len(guess) != NUM_DIGITS or not guess.isdecimal():
                 print(f"Guess #{numguesses}")
-                guess =input("> ")
+                guess = input("> ")
 
-            clues = getclues(guess,secretnum)
+            clues = getclues(guess, secretnum)
             print(clues)
             numguesses += 1
 
@@ -40,6 +41,7 @@ Bagels----------------- No digit is correct""")
             break
     print("Thank you for playing")
 
+
 def getsecretnum():
     """Returns a string made up of unique random digits"""
     numbers = list("0123456789")
@@ -49,6 +51,7 @@ def getsecretnum():
     for i in range(NUM_DIGITS):
         secretnum += str(numbers[i])
     return secretnum
+
 
 def getclues(guess, secretnum):
     """Returns a string with the pico,fermi,bagels clues
@@ -60,7 +63,7 @@ def getclues(guess, secretnum):
 
     for i in range(len(guess)):
         if guess[i] == secretnum[i]:
-            #A correct digit is in the correct place
+            # A correct digit is in the correct place
             clues.append("Fermi")
         elif guess[i] in secretnum:
             # A correct digit is in the incorrect place.
@@ -69,6 +72,8 @@ def getclues(guess, secretnum):
         return "Bagels"
     else:
         clues.sort()
-        return  " ".join(clues)
+        return " ".join(clues)
 
-main()
+
+if __name__ == "__main__":
+    main()
